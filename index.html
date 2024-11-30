@@ -1,7 +1,7 @@
 <h1>환영합니다! 👋</h1>
-<h3>"두쿄봇" 사이트 테스트 사이트에 오신것을 환영합니다!</h3>
+<h2>"두쿄봇" 사이트 테스트 사이트에 오신것을 환영합니다!</h2>
 
-<p>※현재는 테스트가 진행중이지 않아요</p>
+<p>현재 제작중인 사이트는 아래에서 확인 할 수 있어요.</p>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -23,12 +23,12 @@
     header {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: space-between; /* 왼쪽과 오른쪽 구분 */
       padding: 0 1rem;
     }
     .logo {
       display: flex;
-      align-items: center;
+      align-items: center; /* 세로 기준으로 가운데 정렬 */
     }
     .logo img {
       height: 40px;
@@ -36,7 +36,7 @@
     }
     nav {
       display: flex;
-      justify-content: flex-end;
+      justify-content: flex-end; /* 오른쪽 정렬 */
     }
     nav a {
       text-decoration: none;
@@ -71,14 +71,24 @@
       margin-top: 0;
       text-align: center;
     }
+
+    /* 링크 스타일 제거 */
+    a {
+      text-decoration: none;
+      color: inherit; /* 기본 색상 유지 */
+    }
   </style>
 </head>
 <body>
 
 <header>
   <div class="logo">
-    <img src="https://playentry.org/uploads/e4/13/e4136c29lxfrk4fc0whv82abeaapi4wq.png" alt="Logo">
-    <span>두쿄봇</span>
+    <a href="https://www.yourlink.com"> <!-- 여기에 링크를 입력하세요 -->
+      <img src="https://playentry.org/uploads/e4/13/e4136c29lxfrk4fc0whv82abeaapi4wq.png" alt="Logo">
+    </a>
+    <a href="https://www.yourlink.com"> <!-- 여기에 링크를 입력하세요 -->
+      <span>두쿄봇</span>
+    </a>
   </div>
   <nav>
     <a href="코드 실행기">코드 실행기</a>
