@@ -1,4 +1,4 @@
-<h1>환영합니다! 👋</h1>
+ <h1>환영합니다! 👋</h1>
 <h2>"두쿄봇" 사이트 테스트 사이트에 오신것을 환영합니다!</h2>
 
 <p>현재 제작중인 사이트는 아래에서 확인 할 수 있어요.</p>
@@ -8,74 +8,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>두쿄봇 - 테스트</title>
+  <title>두쿄봇</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-    }
-    header, footer {
-      background-color: #6CB4FD;
-      color: white;
-      padding: 1rem 0;
+      background-color: #f9f9f9;
     }
     header {
+      background-color: #6CB4FD;
       display: flex;
       align-items: center;
-      justify-content: space-between; /* 왼쪽과 오른쪽 구분 */
-      padding: 0 1rem;
+      justify-content: space-between;
+      padding: 0.5rem 1rem;
+      color: white;
     }
     .logo {
       display: flex;
-      align-items: center; /* 세로 기준으로 가운데 정렬 */
+      align-items: center;
     }
     .logo img {
       height: 40px;
       margin-right: 0.5rem;
     }
+    .logo span {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
     nav {
       display: flex;
-      justify-content: flex-end; /* 오른쪽 정렬 */
+      align-items: center;
     }
     nav a {
-      text-decoration: none;
       color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      margin: 0;
-      transition: background-color 0.3s ease;
+      text-decoration: none;
+      margin-left: 1rem;
+      font-size: 1rem;
+      transition: color 0.3s;
     }
     nav a:hover {
-      background-color: #777;
+      color: #ddd;
     }
     main {
-      padding: 2rem;
       display: flex;
       justify-content: center;
-      align-items: flex-start; /* 상자를 위쪽으로 정렬 */
-      min-height: 400px;
-      background-color: #f9f9f9;
+      align-items: center;
+      height: calc(100vh - 140px); /* 헤더와 푸터를 제외한 높이 */
     }
     .content-box {
       background-color: white;
-      border: 1px solid #ddd;
       border-radius: 12px;
       padding: 2rem;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      width: 80%;
-      max-width: 800px;
       text-align: center;
+      max-width: 800px;
+      width: 80%;
     }
     footer {
-      margin-top: 0;
+      background-color: #6CB4FD;
+      color: white;
       text-align: center;
-    }
-
-    /* 링크 스타일 제거 */
-    a {
-      text-decoration: none;
-      color: inherit; /* 기본 색상 유지 */
+      padding: 1rem 0;
+      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -83,18 +78,14 @@
 
 <header>
   <div class="logo">
-    <a href="https://www.yourlink.com"> <!-- 여기에 링크를 입력하세요 -->
-      <img src="https://playentry.org/uploads/e4/13/e4136c29lxfrk4fc0whv82abeaapi4wq.png" alt="Logo">
-    </a>
-    <a href="https://www.yourlink.com"> <!-- 여기에 링크를 입력하세요 -->
-      <span>두쿄봇</span>
-    </a>
+    <img src="https://playentry.org/uploads/e4/13/e4136c29lxfrk4fc0whv82abeaapi4wq.png" alt="두쿄봇 로고">
+    <span>두쿄봇</span>
   </div>
   <nav>
-    <a href="코드 실행기">코드 실행기</a>
-    <a href="링크">엔트리 이야기</a>
-    <a href="#services">준비중</a>
-    <a href="#contact">준비중 2</a>
+    <a href="#">코드 실행기</a>
+    <a href="#">엔트리 이야기</a>
+    <a href="#">준비중</a>
+    <a href="#">준비중 2</a>
   </nav>
 </header>
 
