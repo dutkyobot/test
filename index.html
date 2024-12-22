@@ -33,7 +33,7 @@
       margin-right: 0.5rem;
     }
     .logo span {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       font-weight: bold;
     }
     nav {
@@ -45,16 +45,22 @@
       text-decoration: none;
       margin-left: 1rem;
       font-size: 1rem;
-      transition: color 0.3s;
+      padding: 0.5rem 1rem; /* 고정된 패딩 */
+      border-radius: 5px;
+      transition: all 0.3s ease;
     }
-    nav a:hover {
-      color: #ddd;
+    nav a:hover, nav a:focus {
+      background-color: white; /* 배경색 변경 */
+      color: #6CB4FD; /* 글자색 변경 */
+      box-shadow: 0 0 4px #6CB4FD; /* 테두리 대신 그림자 사용 */
+      outline: none; /* 포커스 외곽선 제거 */
     }
     main {
       display: flex;
       justify-content: center;
-      align-items: center;
-      height: calc(100vh - 140px); /* 헤더와 푸터를 제외한 높이 */
+      align-items: flex-start;
+      padding-top: 2rem;
+      min-height: calc(100vh - 140px);
     }
     .content-box {
       background-color: white;
