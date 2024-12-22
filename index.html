@@ -30,6 +30,12 @@
       display: flex;
       align-items: center;
     }
+    .logo a {
+      display: flex;
+      align-items: center;
+      text-decoration: none; /* 링크 표시 제거 */
+      color: inherit;
+    }
     .logo img {
       height: 40px;
       margin-right: 0.5rem;
@@ -86,14 +92,17 @@
 
 <header>
   <div class="logo">
-    <img src="https://playentry.org/uploads/e4/13/e4136c29lxfrk4fc0whv82abeaapi4wq.png" alt="두쿄봇 로고">
-    <span>두쿄봇</span>
+    <!-- 홈 링크 추가 -->
+    <a href="https://dutkyobot.github.io">
+      <img src="https://playentry.org/uploads/e4/13/e4136c29lxfrk4fc0whv82abeaapi4wq.png" alt="두쿄봇 로고">
+      <span>두쿄봇</span>
+    </a>
   </div>
   <nav>
-    <a href="#">코드 실행기</a>
-    <a href="#">엔트리 이야기</a>
-    <a href="#">준비중</a>
-    <a href="#">준비중 2</a>
+    <a href="https://dutkyobot.github.io">코드 실행기</a>
+    <a href="https://dutkyobot.github.io">엔트리 이야기</a>
+    <a href="https://dutkyobot.github.io">준비중</a>
+    <a href="https://dutkyobot.github.io">준비중 2</a>
   </nav>
 </header>
 
