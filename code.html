@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>두쿄봇 - 코드 실행기</title>
+  <link rel="icon" href="https://playentry.org/uploads/e4/13/e4136c29lxfrk4fc0whv82abeaapi4wq.png" type="image/png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    header {
+      background-color: #6CB4FD;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 1rem;
+      color: white;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+    }
+    .logo img {
+      height: 40px;
+      margin-right: 0.5rem;
+    }
+    .logo span {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1rem;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+    nav a:hover, nav a:focus {
+      background-color: white;
+      color: #6CB4FD;
+      box-shadow: 0 0 4px #6CB4FD;
+      outline: none;
+    }
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 2rem;
+      min-height: calc(100vh - 140px);
+    }
+    .content-box {
+      background-color: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      max-width: 800px;
+      width: 90%;
+      margin-bottom: 2rem;
+    }
+    footer {
+      background-color: #6CB4FD;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+    #html-executor-container {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    #html-executor-container label {
+      display: block;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+    #html-executor-container textarea {
+      width: 100%;
+      height: 150px;
+      margin-top: 10px;
+      resize: vertical;
+      border: 1px solid #ccc;
+      padding: 10px;
+      font-family: monospace;
+      border-radius: 8px;
+    }
+    .button-container {
+      margin-top: 15px;
+      text-align: center;
+    }
+    #html-executor-container button {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #333;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    #html-executor-container button:hover {
+      background-color: #555;
+    }
+    #output {
+      width: 100%;
+      aspect-ratio: 16 / 9; /* 16:9 비율 */
+      border: 1px solid #ddd;
+      margin-top: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">
+    <a href="https://dutkyobot.github.io">
+      <img src="https://playentry.org/uploads/e4/13/e4136c29lxfrk4fc0whv82abeaapi4wq.png" alt="두쿄봇 로고">
+      <span>두쿄봇</span>
+    </a>
+  </div>
+  <nav>
+    <a href="https://dutkyobot.github.io">코드 실행기</a>
+    <a href="https://dutkyobot.github.io/entrystory">엔트리 이야기</a>
+    <a href="https://dutkyobot.github.io/">준비중</a>
+    <a href="https://dutkyobot.github.io/">준비중 2</a>
+  </nav>
+</header>
+
+<main>
+  <div class="content-box">
+    <h2>코드 실행기</h2>
+    <p>HTML, CSS, JavaScript 코드를 입력하고 실행해보세요!</p>
+    <div id="html-executor-container">
+      <label for="html">HTML 코드</label>
+      <textarea id="html" placeholder="HTML 코드를 여기에 입력하세요..."></textarea>
+      <label for="css">CSS 코드</label>
+      <textarea id="css" placeholder="CSS 코드를 여기에 입력하세요..."></textarea>
+      <label for="js">JavaScript 코드</label>
+      <textarea id="js" placeholder="JavaScript 코드를 여기에 입력하세요..."></textarea>
+      <div class="button-container">
+        <button onclick="runCode()">코드 실행</button>
+      </div>
+      <iframe id="output"></iframe>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2024. 두쿄봇. All Rights Reserved.</p>
+</footer>
+
+<script>
+  function runCode() {
+    const html = document.getElementById("html").value;
+    const css = document.getElementById("css").value;
+    const js = document.getElementById("js").value;
+
+    const output = document.getElementById("output");
+    const fullCode = `
+      <html>
+      <head><style>${css}</style></head>
+      <body>
+      ${html}
+      <script>${js}<\/script>
+      </body>
+      </html>
+    `;
+    output.srcdoc = fullCode;
+  }
+</script>
+</body>
+</html>
