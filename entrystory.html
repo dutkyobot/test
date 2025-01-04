@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>두쿄봇</title>
+  <link rel="icon" href="https://playentry.org/uploads/e4/13/e4136c29lxfrk4fc0whv82abeaapi4wq.png" type="image/png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    header {
+      background-color: #6CB4FD;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 1rem;
+      color: white;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+    }
+    .logo img {
+      height: 40px;
+      margin-right: 0.5rem;
+    }
+    .logo span {
+      font-size: 1.2rem;
+      font-weight: bold !important;
+      font-family: Arial, sans-serif;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1rem;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+    nav a:hover, nav a:focus {
+      background-color: white;
+      color: #6CB4FD;
+      box-shadow: 0 0 4px #6CB4FD;
+      outline: none;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 2rem;
+      min-height: calc(100vh - 140px);
+    }
+    .content-box {
+      background-color: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      max-width: 800px;
+      width: 90%;
+      margin-bottom: 3rem; /* 간격 수정 */
+    }
+    .text {
+      background-color: #333;
+      color: #fff;
+      margin: 25px;
+      padding: 25px;
+      border-radius: 10px;
+    }
+    footer {
+      background-color: #6CB4FD;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <a href="https://dutkyobot.github.io">
+      <img src="https://playentry.org/uploads/e4/13/e4136c29lxfrk4fc0whv82abeaapi4wq.png" alt="두쿄봇 로고">
+      <span>두쿄봇</span>
+    </a>
+  </div>
+  <nav>
+    <a href="https://dutkyobot.github.io">코드 실행기</a>
+    <a href="https://dutkyobot.github.io">엔트리 이야기</a>
+    <a href="https://dutkyobot.github.io">준비중</a>
+    <a href="https://dutkyobot.github.io">준비중 2</a>
+  </nav>
+</header>
+
+<main>
+  <!-- 기존 콘텐츠 이식 -->
+  <div class="content-box">
+    <h2>엔트리 이야기</h2>
+    <p>제작 : 파이어런</p>
+    <div id="text1" class="text"><progress></progress></div>
+    <div id="text2" class="text"><progress></progress></div>
+    <div id="text3" class="text"><progress></progress></div>
+    <div id="text4" class="text"><progress></progress></div>
+    <div id="text5" class="text"><progress></progress></div>
+    <div id="text6" class="text"><progress></progress></div>
+    <div id="text7" class="text"><progress></progress></div>
+    <div id="text8" class="text"><progress></progress></div>
+    <div id="text9" class="text"><progress></progress></div>
+    <div id="text10" class="text"><progress></progress></div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2024. 두쿄봇. All Rights Reserved.</p>
+</footer>
+
+<script>
+  // 기존 스크립트 복사
+  function getLikeUser(target, yoso) {
+    document.querySelector(`#${yoso}`).removeAttribute("href");
+    fetch(`https://getentrystory.vercel.app/like?${target}`)
+      .then((res) => res.json())
+      .then((req) => {
+        document.querySelector(`#${yoso}`).innerHTML = "";
+        req.forEach((i) => {
+          document.querySelector(`#${yoso}`).innerHTML += `${i.user.nickname}(${i.user.username})님,  `;
+        });
+        document.querySelector(`#${yoso}`).innerHTML = document
+          .querySelector(`#${yoso}`)
+          .innerHTML.slice(0, -3);
+        document.querySelector(`#${yoso}`).outerHTML = document
+          .querySelector(`#${yoso}`)
+          .outerHTML.replace(
+            `<a id="${yoso}">`,
+            `<details id="${yoso}"><summary>(누른 유저 보기)</summary>`
+          )
+          .replace("</a>", "</details>");
+      });
+  }
+  fetch("https://getentrystory.vercel.app/")
+    .then((res) => res.json())
+    .then((req) => {
+      let number = 1;
+      req.forEach((text) => {
+        document.querySelector("#text" + number).innerHTML = ` 
+          <div class="nickname">${text.user.nickname}</div>
+          <div>댓글: ${text.commentsLength}</div>
+          <div>좋아요: ${text.likesLength}</div>
+        `;
+        number++;
+      });
+    });
+</script>
+
+</body>
+</html>
