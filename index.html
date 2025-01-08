@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>두쿄봇</title>
-  <!-- 파비콘 설정 -->
   <link rel="icon" href="https://playentry.org/uploads/e4/13/e4136c29lxfrk4fc0whv82abeaapi4wq.png" type="image/png">
   <style>
+    /* 공통 스타일 */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -15,41 +15,43 @@
     }
     header {
       background-color: #6CB4FD;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.5rem 1rem;
       color: white;
+      text-align: center;
+      padding: 1rem 0;
     }
     .logo {
       display: flex;
       align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
     }
     .logo a {
       display: flex;
       align-items: center;
-      text-decoration: none; /* 링크 표시 제거 */
       color: inherit;
+      text-decoration: none; /* 링크 표시 제거 */
     }
     .logo img {
       height: 40px;
       margin-right: 0.5rem;
     }
     .logo span {
-      font-size: 1.2rem;
-      font-weight: bold; /* 볼드체 추가 */
+      font-size: 1.2rem; /* 기본 글씨 크기 */
+      font-weight: bold;
     }
     nav {
       display: flex;
-      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
     nav a {
       color: white;
       text-decoration: none;
-      margin-left: 1rem;
       font-size: 1rem;
       padding: 0.5rem 1rem;
       border-radius: 5px;
+      background-color: #337AB7;
       transition: all 0.3s ease;
     }
     nav a:hover, nav a:focus {
@@ -72,8 +74,8 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       text-align: left;
       max-width: 600px;
-      width: 70%;
-      margin-bottom: 2rem; /* 메시지 박스와 아래 요소들 사이에 충분한 간격을 추가 */
+      width: 90%;
+      margin-bottom: 2rem;
     }
     footer {
       background-color: #6CB4FD;
@@ -81,7 +83,30 @@
       text-align: center;
       padding: 1rem 0;
       font-size: 0.9rem;
-      margin-top: 2rem; /* 하단 푸터와 다른 요소들 간의 간격을 조정 */
+    }
+
+    /* PC 전용 스타일 */
+    @media screen and (min-width: 768px) {
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1rem;
+      }
+      .logo {
+        margin-bottom: 0;
+      }
+      .logo span {
+        font-size: 1rem; /* PC 화면에서 글씨 크기 축소 */
+      }
+      nav {
+        justify-content: flex-end;
+        gap: 0;
+      }
+      nav a {
+        margin-left: 1rem;
+        background-color: transparent;
+      }
     }
   </style>
 </head>
@@ -89,7 +114,6 @@
 
 <header>
   <div class="logo">
-    <!-- 홈 링크 추가 -->
     <a href="https://dutkyobot.github.io">
       <img src="https://playentry.org/uploads/e4/13/e4136c29lxfrk4fc0whv82abeaapi4wq.png" alt="두쿄봇 로고">
       <span>두쿄봇</span>
